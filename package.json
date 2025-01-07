@@ -1,0 +1,15 @@
+{
+  "name": "1.tuhocnodejs",
+  "version": "1.0.0",
+  "description": "Tu hoc Node Js",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "Khoi Nguyen",
+  "license": "ISC"
+}
