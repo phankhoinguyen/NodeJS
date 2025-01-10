@@ -9,7 +9,7 @@ const port = process.env.PORT
 const connection = require('./config/database')
 
 app.use(express.json()); // Used to parse JSON bodies
-app.use(express.urlencoded()); //Parse URL-encoded bodies
+app.use(express.urlencoded({ extended: true })); //Parse URL-encoded bodies
 
 //config template engine
 configViewEngine(app)
@@ -22,12 +22,7 @@ app.use('/', webRoute)
 
 
 // A simple SELECT query
-connection.query(
-    'SELECT * FROM Users u ',
-    function (err, results, fields) {
-        console.log('>>>Result : ', results); // results contains rows returned by server
-    }
-);
+
 
 
 app.listen(port, () => {
