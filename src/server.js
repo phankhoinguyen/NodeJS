@@ -8,6 +8,9 @@ const app = express()
 const port = process.env.PORT
 const connection = require('./config/database')
 
+app.use(express.json()); // Used to parse JSON bodies
+app.use(express.urlencoded()); //Parse URL-encoded bodies
+
 //config template engine
 configViewEngine(app)
 
@@ -15,7 +18,7 @@ configViewEngine(app)
 //khai báo route
 app.use('/', webRoute)
 
-//TEST CONNECTION 
+
 
 
 // A simple SELECT query

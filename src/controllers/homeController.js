@@ -14,8 +14,14 @@ const getKhoi = (req, res) => {
     res.send('<h1> Hello Leo</h1>')
 }
 
+const postUser = (req, res) => {
+    console.log('>>>Req body : ', req.body)
+    res.send('Add user successfully')
+}
+
 module.exports = {
     getHomePage,
     getLeo,
-    getKhoi
+    getKhoi,
+    postUser
 }
