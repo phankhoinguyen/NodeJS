@@ -15,8 +15,16 @@ const getKhoi = (req, res) => {
 }
 
 const postUser = (req, res) => {
-    console.log('>>>Req body : ', req.body)
-    res.send('Add user successfully')
+    let { email, name, city } = req.body
+    connection.query(
+        `INSERT INTO Users(email , name, city) 
+        VALUES (? ,? , ?)`,
+        [email, name, city],
+        function (err, results) {
+            console.log('>>> Results : ', req.body)
+            res.send('Add user successfully')
+        }
+    )
 }
 
 module.exports = {
