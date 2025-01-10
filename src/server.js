@@ -6,6 +6,7 @@ const webRoute = require('./routes/web')
 const mysql = require('mysql2');
 const app = express()
 const port = process.env.PORT
+const connection = require('./config/database')
 
 //config template engine
 configViewEngine(app)
@@ -15,14 +16,7 @@ configViewEngine(app)
 app.use('/', webRoute)
 
 //TEST CONNECTION 
-// Create the connection to database
-const connection = mysql.createConnection({
-    host: 'localhost',
-    port: 3307,
-    user: 'root',
-    password: '123456',
-    database: 'khoinguyen',
-});
+
 
 // A simple SELECT query
 connection.query(
