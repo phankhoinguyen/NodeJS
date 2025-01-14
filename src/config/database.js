@@ -4,19 +4,19 @@ const mongoose = require('mongoose')
 
 var dbState = [{
     value: 0,
-    label: "disconnected"
+    label: "Disconnected"
 },
 {
     value: 1,
-    label: "connected"
+    label: "Connected"
 },
 {
     value: 2,
-    label: "connecting"
+    label: "Connecting"
 },
 {
     value: 3,
-    label: "disconnecting"
+    label: "Disconnecting"
 }];
 
 
@@ -32,7 +32,7 @@ const connection = async () => {
     await mongoose.connect(process.env.DB_HOST, options);
     // Notify when connect successfully
     const state = Number(mongoose.connection.readyState);
-    console.log(dbState.find(f => f.value == state).label, "to db"); // connected to db
+    console.log(dbState.find(f => f.value == state).label, "to database"); // connected to db
 
 }
 
