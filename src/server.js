@@ -16,15 +16,22 @@ configViewEngine(app)
 
 
 //khai báo route
-app.use('/', webRoute)
+app.use('/', webRoute); // Sửa lỗi bằng 1 dấu ';' =))))
+
+
+//test connection 
+// Self running function 
+// Reason why use it : Synchronize this code 
+(async () => {
+    try {
+        await connection() // Consume more time 
+        app.listen(port, () => {
+            console.log(`Example app listening on port ${port}`)
+        })
+    } catch (error) {
+        console.log('>>CONNECTED DATABASE ERROR', error)
+    }
+})()
 
 
 
-
-// A simple SELECT query
-
-
-
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-})
