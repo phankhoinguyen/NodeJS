@@ -4,7 +4,6 @@ const configViewEngine = require('./config/viewEngine')
 const webRoute = require('./routes/web')
 const mongoose = require('mongoose')
 
-const Kitten = require('./models/Kitten')
 // Get the client
 const mysql = require('mysql2');
 const app = express()
@@ -23,8 +22,7 @@ app.use('/', webRoute); // Sửa lỗi bằng 1 dấu ';' =))))
 
 
 
-const cat = new Kitten({ name: 'Khoi Nguyen cat' });
-cat.save();
+
 //test connection 
 // Self running function 
 // Reason why use it : Synchronize this code 
